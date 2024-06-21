@@ -1,0 +1,5 @@
+Flask
+requests
+python-dotenv
+ChatterBot==1.0.4
+ChatterBot_corpus
