@@ -73,12 +73,11 @@ places = list(locations.keys())
 
 # Define Max Temp Today function
 def get_today_max(place):
-    conv = [f"What is the maximum temperature for {place} today?"]
+    question = f"What is the maximum temperature for {place} today?"
     today = dates[1]
     index = places.index(place)
-    text = f"In {place}, today's maximum is {forecast[index][today]} degrees Celsius."
-    conv.append(text)
-    weather_talk.append(conv)
+    response = f"In {place}, today's maximum is {forecast[index][today]} degrees Celsius."
+    weather_talk.extend([question, response])
 
 
 # Populate weather_talk with get_today_max Q and As
@@ -88,16 +87,16 @@ for place in places:
 
 # Define get tomorrow max
 def get_tomorrow_max(place):
-    conv = [f"What is the maximum temperature for {place} tomorrow?"]
+    question = f"What is the maximum temperature for {place} tomorrow?"
     tomorrow = dates[2]
     index = places.index(place)
-    text = f"In {place}, tomorrow's maximum is {forecast[index][tomorrow]} degrees Celsius."
-    conv.append(text)
-    weather_talk.append(conv)
+    response = f"In {place}, tomorrow's maximum is {forecast[index][tomorrow]} degrees Celsius."
+    weather_talk.extend([question, response])
 
 
 # Populate weather_talk with get_tomorrow_max Q and As
 for place in places:
     get_tomorrow_max(place)
 
-pprint(weather_talk)
+# Test weather_talk
+# pprint(weather_talk)

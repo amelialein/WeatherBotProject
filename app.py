@@ -1,6 +1,6 @@
 # Import modules from Flask
 from flask import Flask, render_template, request
-from chatbot import my_bot
+from chatbotsafe import my_bot
 
 # Instantiate Flask
 app = Flask(__name__)
