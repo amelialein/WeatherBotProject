@@ -5,11 +5,11 @@ from weather import weather_talk
 
 # Instantiate ChatBot
 my_bot = ChatBot(
-name="WeatherBot",
- read_only=True,
- logic_adapters=["chatterbot.logic.MathematicalEvaluation",
- "chatterbot.logic.BestMatch"]
+    name="WeatherBot",
+    read_only=True,
+    logic_adapters=["chatterbot.logic.MathematicalEvaluation", "chatterbot.logic.BestMatch"]
 )
+
 
 # Instantiate ListTrainer
 list_trainer = ListTrainer(my_bot)
@@ -29,10 +29,10 @@ corpus_trainer.train('chatterbot.corpus.english')
 list_trainer.train(weather_talk)
 
 # Run bot
-while True:
-    try:
-        bot_input = input("You: ")
-        bot_response = my_bot.get_response(bot_input)
-        print(f"{my_bot.name}: {bot_response}")
-    except(KeyboardInterrupt, EOFError, SystemExit):
-        break
+# while True:
+#    try:
+#        bot_input = input("You: ")
+#        bot_response = my_bot.get_response(bot_input)
+#        print(f"{my_bot.name}: {bot_response}")
+#    except (KeyboardInterrupt, EOFError, SystemExit):
+#        break
